@@ -1,0 +1,54 @@
+﻿@model PIN_Projekt.Models.Studenti
+
+@{
+    ViewData["Title"] = "Lista studenata";
+}
+
+<h1>Lista studenata</h1>
+
+<div>
+    <h4>Studenti</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Oib)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Oib)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DatumRod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DatumRod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MjestoRod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MjestoRod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Uredi</a> |
+    <a asp-action="Index">Povratak na listu</a>
+</div>

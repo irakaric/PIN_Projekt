@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PIN_Projekt.Models.Predmeti>
+
+@{
+    ViewData["Title"] = "Predmeti";
+}
+
+<h1>Lista predmeta</h1>
+
+<p>
+    <a asp-action="Create">Dodaj novi predmet</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalji</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Obriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
